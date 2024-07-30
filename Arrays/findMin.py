@@ -19,21 +19,14 @@ class Solution:
         Time Complexity: O(log n) - The binary search reduces the problem size by half each step.
         Space Complexity: O(1) - No additional space is used apart from variables.
         """
-        left, right = 0, len(nums) - 1
-        
-        # If the array is not rotated (the smallest element is the first element)
+        left = 0
+        right = len(nums) - 1
         if nums[left] <= nums[right]:
             return nums[left]
-        
-        while left < right:
-            mid = (left + right) // 2
-            
-            # If the middle element is greater than the rightmost element,
-            # the minimum is in the right part
-            if nums[mid] > nums[right]:
-                left = mid + 1
+        while right - left > 1:
+            mid = (left + right)//2
+            if nums[left] < nums[mid]:
+                left = mid
             else:
                 right = mid
-        
-        # The left pointer will be pointing to the minimum element
-        return nums[left]
+        return min(nums[left], nums[right])
