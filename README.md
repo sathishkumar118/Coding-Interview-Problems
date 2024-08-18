@@ -1,4 +1,4 @@
-# DSA Problems and Solutions  
+# Coding Interview Problems and Solutions  
 
 This repository contains a collection of problems and solutions related to famous data structures and algorithms. The problems cover a wide range of topics, including:  
 
